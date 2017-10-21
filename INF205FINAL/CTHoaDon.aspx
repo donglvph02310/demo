@@ -12,19 +12,72 @@
         <p>&nbsp;</p>
         <p>&nbsp;</p>
     </hgroup>
-    <asp:GridView ID="GridView1" runat="server" DataSourceID="SqlDataSource1" AutoGenerateColumns="False">
-        <Columns>
-            <asp:BoundField DataField="MaSp" HeaderText="MaSp" SortExpression="MaSp" />
-            <asp:BoundField DataField="MaHD" HeaderText="MaHD" SortExpression="MaHD" />
-            <asp:BoundField DataField="Soluong" HeaderText="Soluong" SortExpression="Soluong" />
-            <asp:BoundField DataField="DonGiaBan" HeaderText="DonGiaBan" SortExpression="DonGiaBan" />
-        </Columns>
-    </asp:GridView>
-    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\INF205_ass.mdf;Integrated Security=True;Connect Timeout=30" SelectCommand="SELECT [MaSp], [MaHD], [Soluong], [DonGiaBan] FROM [CTHOADON]"></asp:SqlDataSource>
     <br />
     <br />
     <br />
     <br />
+    <hgroup class="title">
+        <h1><asp:FormView ID="FormView1" runat="server" AllowPaging="True" BackColor="White" BorderColor="#336666" BorderStyle="Double" BorderWidth="3px" CellPadding="4" DataSourceID="SqlDataSource1" GridLines="Horizontal" Width="566px" HorizontalAlign="Center">
+            <EditItemTemplate>
+                MaSp:
+                <asp:TextBox ID="MaSpTextBox" runat="server" Text='<%# Bind("MaSp") %>' />
+                <br />
+                MaHD:
+                <asp:TextBox ID="MaHDTextBox" runat="server" Text='<%# Bind("MaHD") %>' />
+                <br />
+                Soluong:
+                <asp:TextBox ID="SoluongTextBox" runat="server" Text='<%# Bind("Soluong") %>' />
+                <br />
+                DonGiaBan:
+                <asp:TextBox ID="DonGiaBanTextBox" runat="server" Text='<%# Bind("DonGiaBan") %>' />
+                <br />
+                <asp:LinkButton ID="UpdateButton" runat="server" CausesValidation="True" CommandName="Update" Text="Update" />
+                &nbsp;<asp:LinkButton ID="UpdateCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" />
+            </EditItemTemplate>
+            <EditRowStyle BackColor="#339966" Font-Bold="True" ForeColor="White" />
+            <FooterStyle BackColor="White" ForeColor="#333333" />
+            <HeaderStyle BackColor="#336666" Font-Bold="True" ForeColor="White" />
+            <InsertItemTemplate>
+                MaSp:
+                <asp:TextBox ID="MaSpTextBox" runat="server" Text='<%# Bind("MaSp") %>' />
+                <br />
+                MaHD:
+                <asp:TextBox ID="MaHDTextBox" runat="server" Text='<%# Bind("MaHD") %>' />
+                <br />
+                Soluong:
+                <asp:TextBox ID="SoluongTextBox" runat="server" Text='<%# Bind("Soluong") %>' />
+                <br />
+                DonGiaBan:
+                <asp:TextBox ID="DonGiaBanTextBox" runat="server" Text='<%# Bind("DonGiaBan") %>' />
+                <br />
+                <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert" Text="Insert" />
+                &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" />
+            </InsertItemTemplate>
+            <ItemTemplate>
+                Mã SP:
+                <asp:Label ID="MaSpLabel" runat="server" Text='<%# Bind("MaSp") %>' />
+                <br />
+                Mã hóa đơn:
+                <asp:Label ID="MaHDLabel" runat="server" Text='<%# Bind("MaHD") %>' />
+                <br />
+                Số Lượng:
+                <asp:Label ID="SoluongLabel" runat="server" Text='<%# Bind("Soluong") %>' />
+                <br />
+                Đơn giá:
+                <asp:Label ID="DonGiaBanLabel" runat="server" Text='<%# Bind("DonGiaBan") %>' />
+                <br />
+            </ItemTemplate>
+            <PagerStyle BackColor="#336666" ForeColor="White" HorizontalAlign="Center" />
+            <RowStyle BackColor="White" ForeColor="#333333" />
+            </asp:FormView>
+        </h1>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+    </hgroup>
+    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString2 %>" SelectCommand="SELECT * FROM [CTHOADON]" OldValuesParameterFormatString="original_{0}">
+</asp:SqlDataSource>
     <br />
     <aside>
         <h3>Xem thêm</h3>

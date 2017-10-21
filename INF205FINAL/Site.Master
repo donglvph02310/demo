@@ -37,7 +37,7 @@
     <header>
         <div class="content-wrapper">
             <div class="float-left">
-                <a href="/Default.aspx"><img src="/Images/logo.png" alt="LOGO" height="80" width="362"></a>
+                <a href="Default.aspx"><img src="Images/logo.png" alt="LOGO" height="80" width="362" aria-busy="False" aria-expanded="undefined"></a>
             </div>
             <div class="float-right">
                 <section id="login">
@@ -74,8 +74,8 @@
         </div>
     </header>
     <div id="body">
-        <asp:ContentPlaceHolder runat="server" ID="FeaturedContent" />
         <section class="content-wrapper main-content clear-fix">
+        <asp:ContentPlaceHolder runat="server" ID="FeaturedContent" />
             <asp:ContentPlaceHolder runat="server" ID="MainContent" />
         </section>
     </div>
@@ -94,6 +94,7 @@
 			<p>
 				&copy; copyright 2023 | all rights reserved.
 			</p>
+		&nbsp;&nbsp;&nbsp;
 		</div>
 	</div>
     </form>
